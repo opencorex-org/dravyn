@@ -1,0 +1,15 @@
+set data_module = "dravyn.core.data"
+
+task pair(key: Text, value: Text) -> Shape {
+  give shape[
+    key: key,
+    value: value,
+  ]
+}
+
+task envelope(kind: Text, payload: Shape) -> Shape {
+  give shape[
+    kind: kind,
+    payload: payload,
+  ]
+}

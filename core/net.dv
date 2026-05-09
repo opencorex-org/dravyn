@@ -1,0 +1,15 @@
+set net_module = "dravyn.core.net"
+
+task route(method: Text, path: Text) -> Shape {
+  give shape[
+    method: method,
+    path: path,
+  ]
+}
+
+task reply(status: Num, body: Text) -> Shape {
+  give shape[
+    status: status,
+    body: body,
+  ]
+}

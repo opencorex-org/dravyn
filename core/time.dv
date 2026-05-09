@@ -1,0 +1,13 @@
+set time_module = "dravyn.core.time"
+
+task stamp(hour: Num, minute: Num) -> Shape {
+  give shape[
+    hour: hour,
+    minute: minute,
+  ]
+}
+
+task quiet_hours(now: Shape) -> Truth {
+  set hour = take(now, "hour")?
+  give hour < 6
+}

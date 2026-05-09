@@ -1,0 +1,9 @@
+set text_module = "dravyn.core.text"
+
+task surround(left: Text, value: Text, right: Text) -> Text {
+  give left + value + right
+}
+
+task wave(name: Text) -> Text {
+  give "Ayubowan " + name
+}

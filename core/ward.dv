@@ -1,0 +1,22 @@
+set ward_core = "dravyn.core.ward"
+
+task io_ward() -> Shape {
+  give shape[
+    kind: "io",
+    reach: "console",
+  ]
+}
+
+task net_ward(service: Text) -> Shape {
+  give shape[
+    kind: "net",
+    reach: service,
+  ]
+}
+
+task device_ward(zone: Text) -> Shape {
+  give shape[
+    kind: "device",
+    reach: zone,
+  ]
+}

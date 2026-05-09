@@ -1,0 +1,17 @@
+set result_module = "dravyn.core.result"
+
+task ready(message: Text) -> Outcome<Text> {
+  give pass(message)
+}
+
+task stop(message: Text) -> Outcome<Text> {
+  give fail(message)
+}
+
+task expect(condition: Truth, message: Text) -> Outcome<Text> {
+  check condition == yes {
+    give pass("ok")
+  }
+
+  give fail(message)
+}

@@ -1,0 +1,9 @@
+set io_module = "dravyn.core.io"
+
+task banner(title: Text) {
+  say(":: " + title + " ::")
+}
+
+task line(label: Text, value: Text) {
+  say(label + ": " + value)
+}

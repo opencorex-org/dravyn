@@ -1,0 +1,23 @@
+set process_module = "dravyn.core.process"
+
+task command(name: Text, args: Pack<Text>) -> Shape {
+  give shape[
+    name: name,
+    args: args,
+  ]
+}
+
+task env(name: Text, value: Text) -> Shape {
+  give shape[
+    name: name,
+    value: value,
+  ]
+}
+
+task launch(name: Text, args: Pack<Text>) -> Shape {
+  give shape[
+    program: name,
+    args: args,
+    mode: "launch",
+  ]
+}

@@ -1,0 +1,13 @@
+set fs_module = "dravyn.core.fs"
+
+task path_join(left: Text, right: Text) -> Text {
+  give left + "/" + right
+}
+
+task project_paths(name: Text) -> Shape {
+  give shape[
+    src: path_join(name, "src"),
+    tests: path_join(name, "tests"),
+    manifest: path_join(name, "dravyn.pkg"),
+  ]
+}
