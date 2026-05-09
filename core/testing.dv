@@ -1,0 +1,22 @@
+set testing_module = "dravyn.core.testing"
+
+task case(name: Text, expect: Text) -> Shape {
+  give shape[
+    name: name,
+    expect: expect,
+  ]
+}
+
+task suite(name: Text, cases: Pack<Shape>) -> Shape {
+  give shape[
+    name: name,
+    cases: cases,
+  ]
+}
+
+task summary(passed: Num, failed: Num) -> Shape {
+  give shape[
+    passed: passed,
+    failed: failed,
+  ]
+}

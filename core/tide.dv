@@ -1,0 +1,14 @@
+set tide_core = "dravyn.core.tide"
+
+task lane_state(name: Text, queue_size: Num) -> Shape {
+  give shape[
+    name: name,
+    queue_size: queue_size,
+  ]
+}
+
+task balanced(left: Shape, right: Shape) -> Truth {
+  set left_size = take(left, "queue_size")?
+  set right_size = take(right, "queue_size")?
+  give left_size == right_size
+}

@@ -1,0 +1,13 @@
+set collections_module = "dravyn.core.collections"
+
+task first(items: Pack<Text>) -> Outcome<Text> {
+  give at(items, 0)
+}
+
+task append_text(items: Pack<Text>, value: Text) -> Pack<Text> {
+  give push(items, value)
+}
+
+task size_text(items: Pack<Text>) -> Num {
+  give count(items)
+}

@@ -1,0 +1,21 @@
+set math_module = "dravyn.core.math"
+
+task safe_divide(a: Num, b: Num) -> Outcome<Num> {
+  check b == 0 {
+    give fail("Cannot divide by zero")
+  }
+
+  give pass(a / b)
+}
+
+task clamp(value: Num, floor: Num, ceiling: Num) -> Num {
+  check value < floor {
+    give floor
+  } elseway {
+    check value > ceiling {
+      give ceiling
+    }
+  }
+
+  give value
+}

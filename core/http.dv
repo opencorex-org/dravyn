@@ -1,0 +1,23 @@
+set http_module = "dravyn.core.http"
+
+task endpoint(method: Text, path: Text, handler: Text) -> Shape {
+  give shape[
+    method: method,
+    path: path,
+    handler: handler,
+  ]
+}
+
+task header(name: Text, value: Text) -> Shape {
+  give shape[
+    name: name,
+    value: value,
+  ]
+}
+
+task response(status: Num, body: Text) -> Shape {
+  give shape[
+    status: status,
+    body: body,
+  ]
+}

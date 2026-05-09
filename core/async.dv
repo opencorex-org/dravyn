@@ -1,0 +1,22 @@
+set async_module = "dravyn.core.async"
+
+task wait(label: Text) -> Shape {
+  give shape[
+    kind: "wait",
+    label: label,
+  ]
+}
+
+task race(entries: Pack<Shape>) -> Shape {
+  give shape[
+    kind: "race",
+    entries: entries,
+  ]
+}
+
+task settle(entries: Pack<Shape>) -> Shape {
+  give shape[
+    kind: "settle",
+    entries: entries,
+  ]
+}

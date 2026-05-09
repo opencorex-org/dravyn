@@ -1,0 +1,21 @@
+set journey_core = "dravyn.core.journey"
+
+task mark(stage_name: Text, state: Text) -> Shape {
+  give shape[
+    stage: stage_name,
+    state: state,
+  ]
+}
+
+task trace(stages: Pack<Text>) -> Pack<Shape> {
+  set index = 0
+  set marks = pack[]
+
+  loopwhile index < count(stages) {
+    set name = at(stages, index)?
+    set marks = push(marks, mark(name, "planned"))
+    index = index + 1
+  }
+
+  give marks
+}
